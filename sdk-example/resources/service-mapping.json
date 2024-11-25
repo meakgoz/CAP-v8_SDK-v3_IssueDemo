@@ -1,0 +1,12 @@
+{
+  "resources/bookshop.edmx": {
+    "packageName": "bookshop",
+    "directoryName": "bookshop",
+    "basePath": "/admin"
+  },
+  "resources/reviews.edmx": {
+    "packageName": "reviews",
+    "directoryName": "reviews",
+    "basePath": "/reviews"
+  }
+}

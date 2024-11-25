@@ -1,0 +1,22 @@
+[
+    {
+        "ID": "550e8400-e29b-41d4-a716-446655440000",
+        "subject": "Product 12345",
+        "reviewer": "user1",
+        "rating": 4,
+        "title": "Great product!",
+        "text": "I really enjoyed using this product. It exceeded my expectations in many ways.",
+        "date": "2023-10-01T12:34:56Z",
+        "liked": 2
+    },
+    {
+        "ID": "550e8400-e29b-41d4-a716-446655440001",
+        "subject": "Service 67890",
+        "reviewer": "user2",
+        "rating": 3,
+        "title": "Average service",
+        "text": "The service was okay, but there is room for improvement.",
+        "date": "2023-10-02T14:20:00Z",
+        "liked": 1
+    }
+]

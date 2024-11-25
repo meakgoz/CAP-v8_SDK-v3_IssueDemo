@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+    <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Validation.V1.xml">
+    <edmx:Include Alias="Validation" Namespace="Org.OData.Validation.V1"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+    <Schema Namespace="ReviewsService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityContainer Name="EntityContainer">
+        <EntitySet Name="Reviews" EntityType="ReviewsService.Reviews"/>
+        <ActionImport Name="like" Action="ReviewsService.like"/>
+        <ActionImport Name="unlike" Action="ReviewsService.unlike"/>
+      </EntityContainer>
+      <EntityType Name="Reviews">
+        <Key>
+          <PropertyRef Name="ID"/>
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+        <Property Name="subject" Type="Edm.String" MaxLength="111"/>
+        <Property Name="reviewer" Type="Edm.String" MaxLength="255"/>
+        <Property Name="rating" Type="Edm.Int32"/>
+        <Property Name="title" Type="Edm.String" MaxLength="111"/>
+        <Property Name="text" Type="Edm.String" MaxLength="1111"/>
+        <Property Name="date" Type="Edm.DateTimeOffset"/>
+        <Property Name="liked" Type="Edm.Int32" DefaultValue="0"/>
+      </EntityType>
+      <Action Name="like" IsBound="false">
+        <Parameter Name="review" Type="Edm.Guid"/>
+      </Action>
+      <Action Name="unlike" IsBound="false">
+        <Parameter Name="review" Type="Edm.Guid"/>
+      </Action>
+      <Annotations Target="ReviewsService.Reviews/ID">
+        <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+      </Annotations>
+      <Annotations Target="ReviewsService.Reviews/subject">
+        <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+      </Annotations>
+      <Annotations Target="ReviewsService.Reviews/reviewer">
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+        <Annotation Term="Common.Label" String="{i18n>UserID}"/>
+      </Annotations>
+      <Annotations Target="ReviewsService.Reviews/rating">
+        <Annotation Term="Validation.AllowedValues">
+          <Collection>
+            <Record Type="Validation.AllowedValue">
+              <Annotation Term="Core.SymbolicName" String="Best"/>
+              <PropertyValue Property="Value" Int="5"/>
+            </Record>
+            <Record Type="Validation.AllowedValue">
+              <Annotation Term="Core.SymbolicName" String="Good"/>
+              <PropertyValue Property="Value" Int="4"/>
+            </Record>
+            <Record Type="Validation.AllowedValue">
+              <Annotation Term="Core.SymbolicName" String="Avg"/>
+              <PropertyValue Property="Value" Int="3"/>
+            </Record>
+            <Record Type="Validation.AllowedValue">
+              <Annotation Term="Core.SymbolicName" String="Poor"/>
+              <PropertyValue Property="Value" Int="2"/>
+            </Record>
+            <Record Type="Validation.AllowedValue">
+              <Annotation Term="Core.SymbolicName" String="Worst"/>
+              <PropertyValue Property="Value" Int="1"/>
+            </Record>
+          </Collection>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="ReviewsService.Reviews/title">
+        <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+      </Annotations>
+      <Annotations Target="ReviewsService.Reviews/date">
+        <Annotation Term="Core.Computed" Bool="true"/>
+      </Annotations>
+      <Annotations Target="ReviewsService.reviewed/subject">
+        <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+      </Annotations>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

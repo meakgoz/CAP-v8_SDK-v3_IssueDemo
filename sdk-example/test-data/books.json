@@ -1,0 +1,132 @@
+{
+    "Books": [
+        {
+            "ID": 1,
+            "createdBy": "emin",
+            "modifiedBy": "admin",
+            "title": "The Great Gatsby",
+            "descr": "A novel written by American author F. Scott Fitzgerald.",
+            "author_ID": 101,
+            "genre_ID": 1,
+            "stock": 100,
+            "price": 10.99,
+            "currency_code": "USD",
+            "image": null
+        },
+        {
+            "ID": 1,
+            "createdAt": "2023-01-01T00:00:00Z",
+            "createdBy": "admin",
+            "modifiedAt": "2023-01-02T00:00:00Z",
+            "modifiedBy": "admin",
+            "title": "The Great Gatsby",
+            "descr": "A novel written by American author F. Scott Fitzgerald.",
+            "author_ID": 1,
+            "genre_ID": 1,
+            "stock": 100,
+            "price": 10.99,
+            "currency_code": "USD",
+            "image": null
+        },
+        {
+            "ID": 2,
+            "createdAt": "2023-01-01T00:00:00Z",
+            "createdBy": "admin",
+            "modifiedAt": "2023-01-02T00:00:00Z",
+            "modifiedBy": "admin",
+            "title": "To Kill a Mockingbird",
+            "descr": "A novel by Harper Lee published in 1960.",
+            "author_ID": 2,
+            "genre_ID": 2,
+            "stock": 50,
+            "price": 7.99,
+            "currency_code": "USD",
+            "image": null
+        }
+    ],
+    "Authors": [
+        {
+            "ID": 1,
+            "createdAt": "2023-01-01T00:00:00Z",
+            "createdBy": "admin",
+            "modifiedAt": "2023-01-02T00:00:00Z",
+            "modifiedBy": "admin",
+            "name": "F. Scott Fitzgerald",
+            "dateOfBirth": "1896-09-24",
+            "dateOfDeath": "1940-12-21",
+            "placeOfBirth": "Saint Paul, Minnesota, USA",
+            "placeOfDeath": "Hollywood, California, USA"
+        },
+        {
+            "ID": 2,
+            "createdAt": "2023-01-01T00:00:00Z",
+            "createdBy": "admin",
+            "modifiedAt": "2023-01-02T00:00:00Z",
+            "modifiedBy": "admin",
+            "name": "Harper Lee",
+            "dateOfBirth": "1926-04-28",
+            "dateOfDeath": "2016-02-19",
+            "placeOfBirth": "Monroeville, Alabama, USA",
+            "placeOfDeath": "Monroeville, Alabama, USA"
+        }
+    ],
+    "Genres": [
+        {
+            "ID": 1,
+            "name": "Classic",
+            "descr": "Classic literature",
+            "parent_ID": null
+        },
+        {
+            "ID": 2,
+            "name": "Fiction",
+            "descr": "Fictional works",
+            "parent_ID": null
+        }
+    ],
+    "Currencies": [
+        {
+            "code": "USD",
+            "name": "US Dollar",
+            "descr": "United States Dollar",
+            "symbol": "$",
+            "minorUnit": 2
+        }
+    ],
+    "Books_texts": [
+        {
+            "locale": "en",
+            "ID": 1,
+            "title": "The Great Gatsby",
+            "descr": "A novel written by American author F. Scott Fitzgerald."
+        },
+        {
+            "locale": "en",
+            "ID": 2,
+            "title": "To Kill a Mockingbird",
+            "descr": "A novel by Harper Lee published in 1960."
+        }
+    ],
+    "Genres_texts": [
+        {
+            "locale": "en",
+            "ID": 1,
+            "name": "Classic",
+            "descr": "Classic literature"
+        },
+        {
+            "locale": "en",
+            "ID": 2,
+            "name": "Fiction",
+            "descr": "Fictional works"
+        }
+    ],
+    "Currencies_texts": [
+        {
+            "locale": "en",
+            "code": "USD",
+            "name": "US Dollar",
+            "descr": "United States Dollar"
+        }
+    ]
+}
